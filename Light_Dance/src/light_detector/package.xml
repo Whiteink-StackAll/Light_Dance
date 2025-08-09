@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>light_detector</name>
+  <version>0.0.0</version>
+  <description>YOLO-based light detection for ROS 2</description>
+  
+  <maintainer email="whiteink@example.com">whiteink</maintainer>
+  <license>Apache License 2.0</license>
+  
+  <!-- 构建工具依赖 -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  
+  <!-- 仅保留执行依赖（移除重复的depend） -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>OpenCV</exec_depend>
+  <exec_depend>light_interfaces</exec_depend>
+  
+  <!-- 测试依赖 -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

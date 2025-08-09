@@ -1,0 +1,53 @@
+/**:
+  ros__parameters:
+    # 输入源配置
+    input_source: "camera"  # 输入源类型: "camera" (相机输入) / "video" (视频文件)
+    video_path: "/home/pikachu/LightDance2/src/light_bringup/videos/test0807.mp4"  # 视频文件绝对路径
+    #NUC:/home/pikachu/LightDance2/src/light_bringup/videos/test.mp4
+    #虚拟机:/home/whiteink/Light_Dance/src/light_bringup/videos/test.mp4
+    camera_topic: "/image_raw"  # 相机图像话题 (input_source为camera时有效)
+    ignore_camera: false  # 是否忽略相机/视频源错误 (true=即使无输入也保持运行)
+    video_loop: true  # 视频文件是否循环播放
+
+    # YOLO模型配置
+    model_path: "/home/pikachu/LightDance2/src/light_bringup/models/best400.pt"  # 模型文件绝对路径
+    #NUC:/home/pikachu/LightDance2/src/light_bringup/models/best400.pt
+    #虚拟机:/home/whiteink/Light_Dance/src/light_bringup/models/best400.pt
+    device: "cpu"  # 推理设备 (cpu/cuda/0/1)
+    imgsz: 400  # 模型输入尺寸 (影响速度和精度)
+    half: false  # 是否启用半精度推理 (仅GPU支持)
+    fp16: false  # 是否启用FP16推理 (仅GPU支持)
+
+    # 检测参数
+    confidence_threshold: 0.71  # 置信度阈值 (0.0-1.0)
+    nms_threshold: 0.45  # 非极大值抑制阈值 (0.0-1.0)
+    max_det: 2  # 最大检测目标数量
+
+    # 输出配置
+    publish_result: true  # 是否发布带检测框的图像
+    result_topic: "result_img"  # 结果图像发布话题名称
+    armor_topic: "armor_detection"  # 装甲板信息发布话题名称
+    show_image: false  # 是否显示检测窗口 (无桌面环境必须设为false)
+    window_name: "YOLO Detection"  # 显示窗口名称 (show_image=true时有效)
+
+    # 性能优化参数
+    frame_publish_limit: 14  # 最大发布帧率限制 (FPS)
+    frame_skip: 0  # 跳帧数量 (0表示不跳帧, 增大可提升速度)
+    visualize: false  # 是否可视化特征图 (调试用)
+    save_txt: false  # 是否保存检测结果到txt文件
+    save_conf: false  # 是否在txt中保存置信度
+
+    # 系统配置
+    enable_debug: false  # 调试信息开关 (true=输出详细日志)
+    camera_qos_reliability: "best_effort"  # 相机话题QoS可靠性 (best_effort/reliable)
+    
+    # 目标大小过滤参数
+    max_target_ratio: 0.43  # 目标最大比例（占图像总面积）
+    min_target_ratio: 0.03  # 目标最小比例（占图像总面积）
+    
+    # 二值化图像处理参数
+    enable_thresholding: true  # 是否启用二值化图像处理
+    threshold_value: 180  # 二值化阈值 (0-255)
+    threshold_max_value: 255  # 二值化最大值 (0-255)
+    threshold_topic: "binary_image"  # 二值化图像发布话题
+    threshold_type: 0  # 二值化类型: 0=THRESH_BINARY, 1=THRESH_BINARY_INV

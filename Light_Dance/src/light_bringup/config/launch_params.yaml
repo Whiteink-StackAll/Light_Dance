@@ -1,0 +1,5 @@
+# 设置启动参数
+# 命名空间 所有节点、话题都会以这个命名空间开头，如/some_namespace/image_raw
+namespace: ''
+# true: 读取视频 false: 读取相机
+video_play: false

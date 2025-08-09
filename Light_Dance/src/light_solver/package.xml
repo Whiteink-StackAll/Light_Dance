@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>light_solver</name>
+  <version>0.0.1</version>
+  <description>Light Solver Package for Armor Detection and Tracking</description>
+  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>OpenCV</depend>
+  <depend>light_interfaces</depend> 
+  <depend>light_utils</depend> 
+  <depend>Eigen3</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

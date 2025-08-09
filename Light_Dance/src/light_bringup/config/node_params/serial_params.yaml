@@ -1,0 +1,31 @@
+/**:
+  ros__parameters:
+    # 串口模式选择 (0=关闭, 1=实际串口, 2=虚拟串口)
+    serial_mode: 1
+
+    # 硬件串口参数 (仅serial_mode=1时生效)
+    port_name: "/dev/ttyACM0"  # 串口设备路径
+    baudrate: 115200           # 波特率
+    read_frequency: 100.0      # 读取频率(Hz)
+
+    # 通用参数
+    timestamp_offset: 0.0      # 时间戳偏移量(秒)
+    enable_data_print: false   # 启用接收数据打印(当前未使用)
+
+    # 发送数据打印控制
+    enable_send_data_print: true  # 启用发送数据日志打印
+
+    # 虚拟串口参数 (仅serial_mode=2时生效)
+    virtual_serial_frequency: 10.0  # 虚拟数据发送频率(Hz)
+    virtual_x_diff: 0.53             # 虚拟X轴差值
+    virtual_y_diff: -0.64            # 虚拟Y轴差值
+    virtual_mode: 2                 # 虚拟模式值
+    virtual_need_back: 1            # 虚拟是否需要后退(0=不需要,1=需要)
+
+    # 串口自动重启参数
+    enable_auto_restart: true       # 是否启用自动重启功能
+    max_failure_count: 2            # 连续失败多少次后触发重启
+    health_check_interval: 1.0      # 健康检查时间间隔(秒)
+    max_restart_attempts: 10000000  # 最大重启尝试次数
+    restart_cooldown: 2.0           # 两次重启之间的冷却时间(秒)
+    restart_delay: 1000             # 重启前的延迟时间(毫秒)

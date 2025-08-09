@@ -1,0 +1,33 @@
+/**:
+  ros__parameters:
+    # 图像尺寸参数
+    image_width: 1440    # 视频1920 相机1440
+    image_height: 1080
+
+    # 一欧元滤波
+    use_filter: true              # 滤波开关：true开启，false关闭
+    filter_min_cutoff: 0.004       # 仅当use_filter=true时生效
+    filter_beta: 0.04              # 仅当use_filter=true时生效
+    filter_d_cutoff: 1.0           # 仅当use_filter=true时生效
+
+    # 追踪参数
+    x_threshold_ratio: 10.0        # x轴阈值比例（占图像宽度的百分比）
+    y_threshold_ratio: 7.0         # y轴阈值比例（占图像高度的百分比）
+    aim_duration_threshold: 2.5    # 瞄准持续时间（秒）
+
+    # 补偿参数（像素值）
+    horizontal_compensation: 120.0  # 横向补偿，正值向右，负值向左
+    vertical_compensation: -90.0     # 纵向补偿，正值向上，负值向下
+
+    # 目标大小参数
+    max_target_ratio: 0.43         # 目标最大比例（超过此值需要后退）
+    min_target_ratio: 0.03         # 目标最小比例（低于此值不瞄准）
+
+    # 红点检测相关参数
+    use_red_dot_detection: true   # 是否使用红点检测模式
+    red_dot_pixel_threshold: 7     # 红点像素数量阈值
+    binary_image_topic: "binary_image"  # 二值化图像话题
+
+    # 调试配置
+    enable_debug: false  # 调试信息开关
+    
